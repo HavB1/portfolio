@@ -150,7 +150,7 @@ export default function Projects() {
             >
               <div className="relative h-48 overflow-hidden">
                 <Image
-                  src={project.image || "/placeholder.svg"}
+                  src={project.image || "/file.svg"}
                   alt={project.title}
                   fill
                   className="object-cover"
