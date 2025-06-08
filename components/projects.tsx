@@ -17,7 +17,7 @@ const projects = [
     title: "Bipp Finance - Client App",
     description:
       "A comprehensive financial management application for Bipp Finance clients, featuring portfolio tracking, investment analysis, and real-time market data. Built with modern web technologies for optimal performance and user experience.",
-    image: "/bipp-clientapp-1.PNG",
+    image: "/bipp-client-web.jpg",
     technologies: [
       "Next.js",
       "React",
