@@ -7,11 +7,11 @@ import GitHubContributions from "@/components/github-contributions";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <main className="min-h-screen bg-slate-950">
       <Hero />
       <Projects />
       {/* <About /> */}
-      <div className="max-w-6xl mx-auto  py-20">
+      <div className="max-w-7xl mx-auto  py-20">
         <GitHubContributions />
       </div>
       <Skills />
