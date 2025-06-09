@@ -7,14 +7,14 @@ import { TRPCReactProvider } from "@/trpc/client";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "John Developer - Fullstack Web Developer",
+  title: "Ditolab - Fullstack Web Developer",
   description:
     "Experienced fullstack web developer specializing in React, Next.js, PHP, and PostgreSQL. Creating modern, responsive web applications.",
   keywords:
     "fullstack developer, web developer, React, Next.js, PHP, PostgreSQL, frontend, backend",
-  authors: [{ name: "John Developer" }],
+  authors: [{ name: "Ditolab" }],
   openGraph: {
-    title: "John Developer - Fullstack Web Developer",
+    title: "Ditolab - Fullstack Web Developer",
     description:
       "Experienced fullstack web developer specializing in React, Next.js, PHP, and PostgreSQL.",
     type: "website",
