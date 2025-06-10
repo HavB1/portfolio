@@ -29,7 +29,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={inter.className}>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+        <TRPCReactProvider>
+          <main className="min-h-screen bg-slate-950">{children}</main>
+        </TRPCReactProvider>
       </body>
     </html>
   );

@@ -7,7 +7,7 @@ import GitHubContributions from "@/components/github-contributions";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-950">
+    <main>
       <Hero />
       <Projects />
       {/* <About /> */}

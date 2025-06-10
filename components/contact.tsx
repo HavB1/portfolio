@@ -21,7 +21,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className={`py-24 px-4 relative ${BG_GRADIENT} rounded-2xl shadow-xl`}
+      className={`py-24 px-4 relative ${BG_GRADIENT} rounded-b-2xl shadow-xl`}
     >
       {/* Subtle pattern overlay */}
       <div
@@ -66,13 +66,13 @@ export default function Contact() {
                 />
                 <span className="text-gray-300">contact@ditolab.com</span>
               </div>
-              <div className="flex items-center gap-3">
+              {/* <div className="flex items-center gap-3">
                 <Phone
                   className="text-[var(--accent-color,#FFD166)]"
                   size={20}
                 />
                 <span className="text-gray-300">+1 (438) 883-5286</span>
-              </div>
+              </div> */}
               <div className="flex items-center gap-3">
                 <MapPin
                   className="text-[var(--accent-color,#FFD166)]"

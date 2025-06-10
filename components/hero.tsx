@@ -18,7 +18,7 @@ const navLinks = [
 export default function Hero() {
   return (
     <section
-      className={`relative min-h-[90vh] w-full flex flex-col justify-between overflow-hidden ${BG_GRADIENT} rounded-2xl shadow-xl`}
+      className={`relative min-h-[90vh] w-full flex flex-col justify-between overflow-hidden ${BG_GRADIENT} rounded-t-2xl shadow-xl`}
     >
       {/* Floating Nav */}
       <nav className="absolute top-8 right-10 z-20 flex gap-8 items-center">

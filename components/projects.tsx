@@ -18,7 +18,19 @@ const ACCENT = "#FFD166";
 const BG_GRADIENT =
   "bg-gradient-to-br from-[#23243a] via-[#36394F] to-[#23243a]";
 
-const projects = [
+type Project = {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  technologies: string[];
+  liveUrl: string;
+  githubUrl?: string;
+  featured: boolean;
+  is_private: boolean;
+};
+
+const projects: Project[] = [
   {
     id: 1,
     title: "Bipp Finance - Client App",
@@ -34,7 +46,7 @@ const projects = [
       "REST APIs",
     ],
     liveUrl: "#",
-    githubUrl: "#",
+    // githubUrl: "#",
     featured: true,
     is_private: false,
   },
@@ -53,7 +65,7 @@ const projects = [
       "Chart.js",
     ],
     liveUrl: "#",
-    githubUrl: "#",
+    // githubUrl: "#",
     featured: true,
     is_private: true,
   },
@@ -108,7 +120,7 @@ const projects = [
       "SEO Optimization",
     ],
     liveUrl: "https://bippfinance.com",
-    githubUrl: "#",
+    // githubUrl: "#",
     featured: false,
     is_private: false,
   },
@@ -127,7 +139,7 @@ const projects = [
       "Analytics",
     ],
     liveUrl: "#",
-    githubUrl: "#",
+    // githubUrl: "#",
     featured: false,
     is_private: true,
   },
@@ -140,7 +152,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className={`py-24 px-4 relative ${BG_GRADIENT} rounded-2xl shadow-xl`}
+      className={`py-24 px-4 relative ${BG_GRADIENT} rounded-b-2xl shadow-xl`}
     >
       {/* Subtle pattern overlay */}
       <div
@@ -247,11 +259,11 @@ export default function Projects() {
                       >
                         <Link href={project.liveUrl} target="_blank">
                           <ExternalLink size={16} className="mr-1" />
-                          Live Demo
+                          Live
                         </Link>
                       </Button>
                     )}
-                    {!project.is_private && (
+                    {!project.is_private && project.githubUrl && (
                       <Button
                         asChild
                         variant="outline"
@@ -364,11 +376,11 @@ export default function Projects() {
                       >
                         <Link href={project.liveUrl} target="_blank">
                           <ExternalLink size={14} className="mr-1" />
-                          Demo
+                          Live
                         </Link>
                       </Button>
                     )}
-                    {!project.is_private && (
+                    {!project.is_private && project.githubUrl && (
                       <Button
                         asChild
                         variant="outline"

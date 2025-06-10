@@ -29,69 +29,69 @@ const years = Array.from({ length: 5 }, (_, i) => currentYear - i);
 function LoadingSkeleton() {
   return (
     <section className="w-full flex justify-center">
-      <Card className="w-full bg-[#23243a]/80 border-none shadow-xl rounded-2xl overflow-visible">
-        {/* <CardHeader className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pb-6 pt-8 px-8"> */}
-        {/* <div>
+      {/* <div className="w-full bg-[#23243a]/80 border-none shadow-xl rounded-2xl overflow-visible"> */}
+      {/* <CardHeader className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pb-6 pt-8 px-8"> */}
+      {/* <div>
             <Skeleton className="h-8 w-48 mb-2 bg-gray-700" />
             <Skeleton className="h-5 w-32 bg-gray-700" />
           </div> */}
-        {/* <div className="flex flex-col items-end gap-1">
+      {/* <div className="flex flex-col items-end gap-1">
             <Skeleton className="h-4 w-8 mb-1 bg-gray-700" />
             <Skeleton className="h-10 w-[120px] bg-gray-700" />
           </div> */}
-        {/* </CardHeader> */}
-        <CardContent className="px-8 pb-8 pt-0">
-          <div className="flex flex-col gap-6">
-            <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2 mb-2">
-              <Skeleton className="h-6 w-48 bg-[var(--accent-color,#FFD166)]/60" />
-              <div className="flex items-center gap-2">
-                <Skeleton className="h-4 w-8 bg-gray-700" />
-                <div className="flex gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Skeleton
-                      key={i}
-                      className={`w-3 h-3 rounded ${
-                        i === 4
-                          ? "bg-[var(--accent-color,#FFD166)]"
-                          : "bg-gray-700"
-                      }`}
-                    />
-                  ))}
-                </div>
-                <Skeleton className="h-4 w-8 bg-gray-700" />
-              </div>
-            </div>
-            <div className="relative overflow-x-auto">
-              <div className="absolute -top-6 left-8 right-0 flex justify-between text-xs select-none pointer-events-none">
-                {[...Array(12)].map((_, i) => (
+      {/* </CardHeader> */}
+      <div className="px-0 pb-8 pt-0">
+        <div className="flex flex-col gap-6">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2 mb-2">
+            <Skeleton className="h-4 w-[22ch] bg-[var(--accent-color,#FFD166)]/60" />
+            <div className="flex items-center gap-2">
+              <Skeleton className="h-4 w-8 bg-gray-700" />
+              <div className="flex gap-1">
+                {[...Array(5)].map((_, i) => (
                   <Skeleton
                     key={i}
-                    className="h-4 w-8 bg-gray-700"
-                    style={{ marginLeft: i === 0 ? "0" : "auto" }}
+                    className={`w-3 h-3 rounded ${
+                      i === 4
+                        ? "bg-[var(--accent-color,#FFD166)]"
+                        : "bg-gray-700"
+                    }`}
                   />
                 ))}
               </div>
-              <div className="absolute left-0 top-0 bottom-0 flex flex-col justify-between text-xs select-none pointer-events-none h-[110px] py-1">
-                {[...Array(3)].map((_, i) => (
-                  <Skeleton key={i} className="h-4 w-8 bg-gray-700" />
-                ))}
-              </div>
-              <div className="grid grid-cols-53 gap-1 pl-8 pt-2 pb-2">
-                {[...Array(53)].map((_, weekIndex) => (
-                  <div key={weekIndex} className="flex flex-col gap-1">
-                    {[...Array(7)].map((_, dayIndex) => (
-                      <Skeleton
-                        key={dayIndex}
-                        className="w-4 h-4 rounded-[3.5px] bg-gray-700"
-                      />
-                    ))}
-                  </div>
-                ))}
-              </div>
+              <Skeleton className="h-4 w-8 bg-gray-700" />
             </div>
           </div>
-        </CardContent>
-      </Card>
+          <div className="relative overflow-x-auto">
+            <div className="absolute -top-6 left-8 right-0 flex justify-between text-xs select-none pointer-events-none">
+              {[...Array(12)].map((_, i) => (
+                <Skeleton
+                  key={i}
+                  className="h-4 w-8 bg-gray-700"
+                  style={{ marginLeft: i === 0 ? "0" : "auto" }}
+                />
+              ))}
+            </div>
+            <div className="absolute left-0 top-0 bottom-0 flex flex-col justify-between text-xs select-none pointer-events-none h-[110px] py-1">
+              {[...Array(3)].map((_, i) => (
+                <Skeleton key={i} className="h-4 w-8 bg-gray-700" />
+              ))}
+            </div>
+            <div className="grid grid-cols-53 gap-1 pl-8 pt-2 pb-2">
+              {[...Array(53)].map((_, weekIndex) => (
+                <div key={weekIndex} className="flex flex-col gap-1">
+                  {[...Array(7)].map((_, dayIndex) => (
+                    <Skeleton
+                      key={dayIndex}
+                      className="w-4 h-4 rounded-[3.5px] bg-gray-700"
+                    />
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* </div> */}
     </section>
   );
 }
@@ -185,11 +185,8 @@ export default function GitHubContributions() {
                   Select a year to view your GitHub activity.
                 </div>
               </div>
-              <div className="flex flex-col items-end gap-1">
-                <label
-                  htmlFor="year-select"
-                  className="text-xs text-gray-400 mb-1"
-                >
+              <div className="flex items-center gap-2">
+                <label htmlFor="year-select" className="text-xs text-gray-400">
                   Year
                 </label>
                 <Select
@@ -220,7 +217,7 @@ export default function GitHubContributions() {
               {isLoading ? (
                 <LoadingSkeleton />
               ) : contributions ? (
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-6 w-full">
                   <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2 mb-2">
                     <span className="text-lg font-semibold text-[var(--accent-color,#FFD166)]">
                       {contributions.totalContributions.toLocaleString()}{" "}
@@ -238,8 +235,8 @@ export default function GitHubContributions() {
                       <span>More</span>
                     </div>
                   </div>
-                  <div className="relative overflow-x-auto">
-                    <div className="absolute -top-6 left-8 right-0 flex justify-between text-xs text-gray-400 font-medium select-none pointer-events-none">
+                  <div className="relative w-full overflow-x-auto  px-8">
+                    <div className="absolute -top-6 left-8 right-0 flex justify-between text-xs text-gray-400 font-medium select-none pointer-events-none min-w-4xl">
                       {monthLabels.map((month, index) => (
                         <span
                           key={month}
@@ -254,7 +251,7 @@ export default function GitHubContributions() {
                         <span key={day}>{day}</span>
                       ))}
                     </div>
-                    <div className="grid grid-cols-53 gap-1 pl-8 pt-2 pb-2">
+                    <div className="grid grid-cols-53 gap-1 pl-8 pt-2 pb-2 min-w-5xl">
                       {contributions.weeks.map(
                         (week: ContributionWeek, weekIndex: number) => (
                           <div key={weekIndex} className="flex flex-col gap-1">
