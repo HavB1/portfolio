@@ -12,12 +12,66 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 import { motion } from "motion/react";
+import { useState } from "react";
+import { toast } from "sonner";
+import { Whatsapp } from "@/lib/icons";
 
 const ACCENT = "#FFD166";
 const BG_GRADIENT =
   "bg-gradient-to-br from-[#23243a] via-[#36394F] to-[#23243a]";
 
 export default function Contact() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      toast.success("Message sent successfully!");
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
   return (
     <section
       id="contact"
@@ -59,13 +113,16 @@ export default function Contact() {
               Contact Information
             </h3>
             <div className="space-y-4 mb-8">
-              <div className="flex items-center gap-3">
+              <a
+                href="mailto:business@ditolab.com"
+                className="flex items-center gap-3"
+              >
                 <Mail
                   className="text-[var(--accent-color,#FFD166)]"
                   size={20}
                 />
-                <span className="text-gray-300">contact@ditolab.com</span>
-              </div>
+                <span className="text-gray-300">business@ditolab.com</span>
+              </a>
               {/* <div className="flex items-center gap-3">
                 <Phone
                   className="text-[var(--accent-color,#FFD166)]"
@@ -73,25 +130,31 @@ export default function Contact() {
                 />
                 <span className="text-gray-300">+1 (438) 883-5286</span>
               </div> */}
-              <div className="flex items-center gap-3">
-                <MapPin
+              <a
+                href="https://wa.me/886966211851"
+                className="flex items-center gap-3"
+              >
+                {/* <MapPin
                   className="text-[var(--accent-color,#FFD166)]"
                   size={20}
-                />
-                <span className="text-gray-300">Montréal, QC</span>
-              </div>
+                /> */}
+                <div className="[&>svg]:size-4 [&>svg]:fill-[#FFD166]">
+                  <Whatsapp />
+                </div>
+                <span className="text-gray-300">+886 966 211 851</span>
+              </a>
             </div>
 
             <div className="flex gap-4">
               <Link
-                href="https://github.com"
+                href="https://github.com/HavB1"
                 className="flex items-center gap-2 text-gray-400 hover:text-[var(--accent-color,#FFD166)] transition-colors"
               >
                 <Github size={20} />
                 <span>GitHub</span>
               </Link>
               <Link
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/dedfegens"
                 className="flex items-center gap-2 text-gray-400 hover:text-[var(--accent-color,#FFD166)] transition-colors"
               >
                 <Linkedin size={20} />
@@ -109,35 +172,56 @@ export default function Contact() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <form className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <Input
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
                     placeholder="First Name"
+                    required
                     className="bg-[#23243a] border-gray-700 text-white placeholder:text-gray-500"
                   />
                   <Input
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
                     placeholder="Last Name"
+                    required
                     className="bg-[#23243a] border-gray-700 text-white placeholder:text-gray-500"
                   />
                 </div>
                 <Input
+                  name="email"
                   type="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="Email Address"
+                  required
                   className="bg-[#23243a] border-gray-700 text-white placeholder:text-gray-500"
                 />
                 <Input
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
                   placeholder="Subject"
+                  required
                   className="bg-[#23243a] border-gray-700 text-white placeholder:text-gray-500"
                 />
                 <Textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   placeholder="Your message..."
+                  required
                   className="min-h-[120px] bg-[#23243a] border-gray-700 text-white placeholder:text-gray-500"
                 />
                 <Button
                   type="submit"
-                  className="w-full bg-[var(--accent-color,#FFD166)] text-[#23243a] font-bold hover:bg-[#ffe299] transition-colors"
+                  disabled={isLoading}
+                  className="w-full bg-[var(--accent-color,#FFD166)] text-[#23243a] font-bold hover:bg-[#ffe299] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {isLoading ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </CardContent>
