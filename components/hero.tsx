@@ -2,8 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ArrowDown, ArrowRight } from "lucide-react";
-import Link from "next/link";
-import { motion } from "motion/react";
+
 import Image from "next/image";
 
 const ACCENT = "#FFD166";
@@ -31,19 +30,24 @@ export default function Hero() {
             DITOLAB
           </span>
         </div>
-        <a
-          href={"#contact"}
-          className="bg-white text-[#23243a] font-semibold px-6 py-2 rounded-full shadow hover:bg-gray-100 transition-colors"
-        >
-          Book a call
-        </a>
+        <div className="flex gap-4 items-center text-amber-50">
+          <a className="hidden md:block" href="#projects">
+            My Work
+          </a>
+          <a
+            href={"#contact"}
+            className="bg-white text-[#23243a] font-semibold px-6 py-2 rounded-full shadow hover:bg-gray-100 transition-colors"
+          >
+            Book a call
+          </a>
+        </div>
       </div>
 
       {/* Main Content */}
       <div className="flex flex-col md:flex-row items-center justify-between w-full h-full px-6 md:px-20 pt-12 pb-8 gap-10 md:gap-0">
         {/* Left: Intro */}
         <div className="flex-1 flex flex-col items-start justify-center gap-6 md:gap-10 mt-8 md:mt-0">
-          <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/10 text-sky-300 text-sm font-semibold shadow border border-white/10 mb-2">
+          <span className="inline-flex mx-auto md:mx-0 items-center gap-2 px-4 py-1 rounded-full bg-white/10 text-sky-300 text-sm font-semibold shadow border border-white/10 mb-2">
             <span className="w-2 h-2 rounded-full bg-sky-400 inline-block" />
             AVAILABLE FOR WORK
           </span>
@@ -57,7 +61,7 @@ export default function Hero() {
             </span>
           </h1>
 
-          <Button className="bg-white text-[#23243a] font-semibold px-8 py-3 rounded-full shadow hover:bg-gray-100 transition-colors mt-4">
+          <Button className="bg-white w-full text-[#23243a] font-semibold px-8 py-3 rounded-full shadow hover:bg-gray-100 transition-colors mt-4">
             Contact Us
           </Button>
         </div>
@@ -100,7 +104,7 @@ export default function Hero() {
                 </div>
               ))}
               {/* Bipp Admin App (2 images) */}
-              <div className="mb-4 break-inside-avoid relative rounded-xl overflow-hidden shadow-lg flex flex-col gap-2 group cursor-pointer">
+              <div className="mb-4 break-inside-avoid relative rounded-xl overflow-hidden shadow-lg md:flex flex-col gap-2 group cursor-pointer hidden ">
                 <div className="relative w-full">
                   <Image
                     src="/bipp-admin-1.png"
