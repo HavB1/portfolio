@@ -19,6 +19,24 @@ export const metadata: Metadata = {
     description:
       "Experienced fullstack web developer specializing in React, Next.js, PHP, and PostgreSQL.",
     type: "website",
+    url: "https://portfolio.ditolab.com",
+    images: [
+      {
+        url: "https://portfolio.ditolab.com/opengraph-image.png",
+        width: 800,
+        height: 600,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ditolab - Portfolio",
+    description:
+      "Experienced fullstack web developer specializing in React, Next.js, PHP, and PostgreSQL.",
+    images: {
+      url: "https://portfolio.ditolab.com/twitter-image.png",
+      alt: "Ditolab - Portfolio",
+    },
   },
 };
 
