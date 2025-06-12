@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, ArrowDown, ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 const ACCENT = "#FFD166";
@@ -60,9 +59,12 @@ export default function Hero() {
             </span>
           </h1>
 
-          <Button className="bg-white w-full text-[#23243a] font-semibold px-8 py-3 rounded-full shadow hover:bg-gray-100 transition-colors mt-4">
+          <a
+            href="#contact"
+            className="bg-white w-full md:w-auto text-[#23243a] font-semibold px-8 py-3 rounded-full shadow hover:bg-gray-100 transition-colors mt-4 text-center"
+          >
             Contact Us
-          </Button>
+          </a>
         </div>
 
         {/* Right: Projects Masonry Grid */}
@@ -73,16 +75,17 @@ export default function Hero() {
               {[
                 { src: "/bipp-website.png", name: "Website" },
                 { src: "/bipp-clientapp-1.PNG", name: "PWA" },
-                { src: "/bipp-clientapp-2.PNG", name: "PWA" },
-                { src: "/bipp-clientapp-3.PNG", name: "PWA" },
                 { src: "/bipp-calc.png", name: "Web App" },
+                { src: "/bipp-clientapp-2.PNG", name: "PWA" },
                 { src: "/ded-viz.png", name: "Website" },
+                { src: "/e4s-admin.png", name: "PWA" },
+                { src: "/bipp-clientapp-3.PNG", name: "PWA" },
                 {
                   src: "/e4s-ticket-making.png",
                   name: "Web App",
                 },
-                { src: "/e4s-admin.png", name: "PWA" },
-                { src: "/bipp-client-web.jpg", name: "PWA" },
+
+                // { src: "/bipp-client-web.jpg", name: "PWA" },
               ].map((project) => (
                 <div
                   key={project.src}

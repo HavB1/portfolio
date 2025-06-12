@@ -73,7 +73,7 @@ const projects: Project[] = [
     id: 3,
     title: "Entreprises 4 Saisons - Ticket System",
     description:
-      "A specialized ticket management system for Entreprises 4 Saisons, streamlining service requests and maintenance operations. Includes ticket creation, tracking, and automated notifications.",
+      "A specialized ticket management system for Entreprises 4 Saisons, serving as a marketing tool for the company. It allowed users to generate a unique design for the event using theuir own beloved images.",
     image: "/e4s-ticket-making.png",
     technologies: [
       "Next.js",
