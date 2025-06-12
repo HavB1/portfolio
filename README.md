@@ -4,7 +4,7 @@ A modern, responsive portfolio website built with Next.js 15, React 19, and Type
 
 ## Features
 
-- 🎨 Modern UI with Tailwind CSS and Radix UI components
+- 🎨 Modern UI with Tailwind CSS and Shadcn UI components
 - 📧 Contact form with email integration using Resend
 - ⚡ Fast performance with Turbopack
 - 🔒 Type-safe API routes with tRPC
@@ -16,7 +16,7 @@ A modern, responsive portfolio website built with Next.js 15, React 19, and Type
 - **Framework:** Next.js 15
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
-- **UI Components:** Radix UI
+- **UI Components:** Shadcn UI
 - **State Management:** TanStack Query
 - **API:** tRPC
 - **Email:** React Email + Resend
