@@ -88,6 +88,7 @@ const projects: Project[] = [
     featured: true,
     is_private: false,
   },
+
   {
     id: 4,
     title: "Bipp Finance - Calculator",
@@ -142,6 +143,29 @@ const projects: Project[] = [
     // githubUrl: "#",
     featured: false,
     is_private: true,
+  },
+  {
+    id: 7,
+    title: "Monétiq - Personal Finance Management App",
+    description:
+      "A comprehensive personal finance management application that helps users track expenses, manage budgets, set financial goals, and gain insights through detailed reports and analytics. Features multi-currency support, receipt scanning, and intelligent financial recommendations.",
+    image: "/monetiq.png", // Note: Image needs to be added to public folder
+    technologies: [
+      "Next.js 15",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS",
+      "tRPC",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Clerk",
+      "Motion",
+      "Recharts",
+    ],
+    liveUrl: "https://monetiq.ditolab.com",
+    // githubUrl: "#", // Update with actual repo URL
+    featured: true,
+    is_private: false,
   },
 ];
 
