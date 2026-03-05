@@ -9,14 +9,10 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Lock } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "motion/react";
-
-const ACCENT = "#FFD166";
-const BG_GRADIENT =
-  "bg-gradient-to-br from-[#23243a] via-[#36394F] to-[#23243a]";
 
 type Project = {
   id: number;
@@ -35,7 +31,7 @@ const projects: Project[] = [
     id: 1,
     title: "Bipp Finance - Client App",
     description:
-      "A comprehensive financial management application for Bipp Finance clients, featuring portfolio tracking, investment analysis, and real-time market data. Built with modern web technologies for optimal performance and user experience.",
+      "Portfolio tracking, investment analysis, and real-time market data for Bipp Finance clients.",
     image: "/bipp-client-web.jpg",
     technologies: [
       "Next.js",
@@ -46,34 +42,82 @@ const projects: Project[] = [
       "REST APIs",
     ],
     liveUrl: "https://app.bippfinance.com",
-    // githubUrl: "#",
     featured: true,
     is_private: false,
   },
   {
-    id: 2,
-    title: "Bipp Finance - Admin Dashboard",
+    id: 7,
+    title: "Monétiq",
     description:
-      "An advanced administrative dashboard for Bipp Finance, enabling efficient management of client portfolios, financial reports, and system configurations. Features comprehensive analytics and real-time monitoring.",
-    image: "/bipp-admin-1.png",
+      "Personal finance app for tracking expenses, managing budgets, and gaining insights through detailed reports. Features multi-currency support and intelligent recommendations.",
+    image: "/monetiq.png",
     technologies: [
-      "Next.js",
-      "React",
+      "Next.js 15",
+      "React 19",
       "TypeScript",
       "Tailwind CSS",
+      "tRPC",
       "PostgreSQL",
-      "Chart.js",
+      "Drizzle ORM",
+      "Clerk",
+      "Recharts",
     ],
-    liveUrl: "#",
-    // githubUrl: "#",
+    liveUrl: "https://monetiq.ditolab.com",
     featured: true,
-    is_private: true,
+    is_private: false,
+  },
+  {
+    id: 8,
+    title: "Doeit",
+    description:
+      "A personal workout companion app to track workouts, create custom training plans, and achieve fitness goals with progress tracking.",
+    image: "/file.svg",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    liveUrl: "https://doeit.ditolab.com",
+    featured: true,
+    is_private: false,
+  },
+  {
+    id: 9,
+    title: "Squish",
+    description:
+      "Client-side image compressor for JPEG, PNG & WebP. Drag-and-drop, adjustable quality, Google Drive import — everything runs in-browser, 100% private.",
+    image: "/file.svg",
+    technologies: [
+      "React 19",
+      "TypeScript",
+      "Vite",
+      "React Router v7",
+      "Canvas API",
+      "Google Drive API",
+    ],
+    liveUrl: "https://squish.ditolab.com",
+    featured: true,
+    is_private: false,
+  },
+  {
+    id: 10,
+    title: "LitQuiz - Student Notes",
+    description:
+      "AI-powered SaaS that generates interactive quizzes and flashcards from uploaded study materials like PDFs and images. Subscription-based with Row-Level Security.",
+    image: "/file.svg",
+    technologies: [
+      "Next.js 15",
+      "TypeScript",
+      "Clerk",
+      "Neon PostgreSQL",
+      "AI/LLM",
+      "Drizzle ORM",
+    ],
+    liveUrl: "https://note.litquiz.pro",
+    featured: true,
+    is_private: false,
   },
   {
     id: 3,
-    title: "Entreprises 4 Saisons - Ticket System",
+    title: "E4S - Ticket System",
     description:
-      "A specialized ticket management system for Entreprises 4 Saisons, serving as a marketing tool for the company. It allowed users to generate a unique design for the event using theuir own beloved images.",
+      "A marketing tool that lets users generate unique event ticket designs using their own images.",
     image: "/e4s-ticket-making.png",
     technologies: [
       "Next.js",
@@ -84,16 +128,32 @@ const projects: Project[] = [
       "WebSocket",
     ],
     liveUrl: "https://tickets.e4shaiti.com",
-    // githubUrl: "#",
-    featured: true,
+    featured: false,
     is_private: false,
   },
-
+  {
+    id: 2,
+    title: "Bipp Finance - Admin Dashboard",
+    description:
+      "Administrative dashboard for managing client portfolios, financial reports, and system configurations with real-time analytics.",
+    image: "/bipp-admin-1.png",
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "Chart.js",
+    ],
+    liveUrl: "#",
+    featured: false,
+    is_private: true,
+  },
   {
     id: 4,
     title: "Bipp Finance - Calculator",
     description:
-      "An advanced financial calculator tool for Bipp Finance, helping clients make informed investment decisions with precise calculations and projections.",
+      "Financial calculator tool for precise investment projections and informed decision-making.",
     image: "/bipp-calc.png",
     technologies: [
       "Next.js",
@@ -103,7 +163,6 @@ const projects: Project[] = [
       "Financial APIs",
     ],
     liveUrl: "https://simulator.bippfinance.com",
-    // githubUrl: "#",
     featured: false,
     is_private: false,
   },
@@ -111,25 +170,18 @@ const projects: Project[] = [
     id: 5,
     title: "Bipp Finance - Website",
     description:
-      "The official website for Bipp Finance, showcasing services, company information, and client resources. Features a modern, responsive design optimized for all devices.",
+      "Company marketing website with modern, responsive design optimized for all devices and SEO.",
     image: "/bipp-website.png",
-    technologies: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "SEO Optimization",
-    ],
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "SEO"],
     liveUrl: "https://bippfinance.com",
-    // githubUrl: "#",
     featured: false,
     is_private: false,
   },
   {
     id: 6,
-    title: "Entreprises 4 Saisons - Admin Panel",
+    title: "E4S - Admin Panel",
     description:
-      "Administrative control panel for Entreprises 4 Saisons, providing comprehensive management tools for service operations and business analytics.",
+      "Service operations management and business analytics for Entreprises 4 Saisons.",
     image: "/e4s-admin.png",
     technologies: [
       "Next.js",
@@ -140,32 +192,8 @@ const projects: Project[] = [
       "Analytics",
     ],
     liveUrl: "#",
-    // githubUrl: "#",
     featured: false,
     is_private: true,
-  },
-  {
-    id: 7,
-    title: "Monétiq - Personal Finance Management App",
-    description:
-      "A comprehensive personal finance management application that helps users track expenses, manage budgets, set financial goals, and gain insights through detailed reports and analytics. Features multi-currency support, receipt scanning, and intelligent financial recommendations.",
-    image: "/monetiq.png", // Note: Image needs to be added to public folder
-    technologies: [
-      "Next.js 15",
-      "React 19",
-      "TypeScript",
-      "Tailwind CSS",
-      "tRPC",
-      "PostgreSQL",
-      "Drizzle ORM",
-      "Clerk",
-      "Motion",
-      "Recharts",
-    ],
-    liveUrl: "https://monetiq.ditolab.com",
-    // githubUrl: "#", // Update with actual repo URL
-    featured: true,
-    is_private: false,
   },
 ];
 
@@ -176,257 +204,199 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className={`py-24 px-4 relative ${BG_GRADIENT} rounded-b-2xl shadow-xl`}
+      className="py-28 px-4 bg-gradient-to-b from-[#23243a] via-[#2a2c42] to-[#23243a]"
     >
-      {/* Subtle pattern overlay */}
-      <div
-        className="pointer-events-none absolute inset-0 z-0 opacity-10"
-        style={{
-          backgroundImage:
-            "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='40' height='40' fill='%23FFD166' fill-opacity='0.07'/%3E%3C/svg%3E\")",
-        }}
-      />
-      <div className="max-w-6xl mx-auto relative z-10">
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-4xl font-extrabold text-white text-center mb-4 tracking-tight"
-        >
-          Featured Projects
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="text-lg text-gray-300 text-center mb-12 max-w-2xl mx-auto"
-        >
-          Here are some of my recent projects that showcase my fullstack
-          development skills
-        </motion.p>
-
-        {/* Featured Projects */}
+      <div className="max-w-5xl mx-auto">
+        {/* Section Header */}
         <motion.div
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          variants={{
-            hidden: {},
-            visible: {
-              transition: { staggerChildren: 0.12 },
-            },
-          }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20"
+          className="mb-16"
         >
+          <p className="text-[#FFD166] text-sm font-medium tracking-widest uppercase mb-3">
+            Portfolio
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
+            Selected Work
+          </h2>
+        </motion.div>
+
+        {/* Featured Projects — Horizontal cards */}
+        <div className="space-y-6 mb-24">
           {featuredProjects.map((project, idx) => (
             <motion.div
               key={project.id}
-              variants={{
-                hidden: { opacity: 0, y: 40 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              transition={{ type: "spring", stiffness: 80, damping: 18 }}
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, delay: idx * 0.08 }}
+              viewport={{ once: true }}
             >
-              <Card className="overflow-hidden group bg-[#23243a]/80 border-none shadow-lg rounded-2xl transition-transform duration-300 hover:scale-[1.025] hover:shadow-2xl relative">
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={project.image || "/file.svg"}
-                    alt={project.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  {project.is_private && (
-                    <div className="absolute top-3 right-3 bg-gray-900/80 text-yellow-300 text-xs px-3 py-1 rounded-full font-semibold z-10">
-                      Private
+              <Link
+                href={project.liveUrl}
+                target="_blank"
+                className="group block"
+              >
+                <div className="flex flex-col md:flex-row gap-6 md:gap-10 p-5 md:p-6 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:bg-white/[0.06] hover:border-white/[0.1] transition-all duration-300">
+                  {/* Image */}
+                  <div className="relative w-full md:w-72 h-44 md:h-44 shrink-0 rounded-xl overflow-hidden bg-[#1a1b2e]">
+                    <Image
+                      src={project.image || "/file.svg"}
+                      alt={project.title}
+                      fill
+                      className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex flex-col justify-between flex-1 py-1">
+                    <div>
+                      <div className="flex items-center gap-3 mb-2">
+                        <h3 className="text-xl font-semibold text-white group-hover:text-[#FFD166] transition-colors duration-200">
+                          {project.title}
+                        </h3>
+                        {project.is_private && (
+                          <Lock size={14} className="text-gray-500" />
+                        )}
+                      </div>
+                      <p className="text-sm text-gray-400 leading-relaxed mb-4 max-w-lg">
+                        {project.description}
+                      </p>
                     </div>
-                  )}
+
+                    <div className="flex flex-wrap gap-1.5">
+                      {project.technologies.slice(0, 5).map((tech) => (
+                        <span
+                          key={tech}
+                          className="text-xs px-2.5 py-1 rounded-full bg-white/[0.06] text-gray-300"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                      {project.technologies.length > 5 && (
+                        <span className="text-xs px-2.5 py-1 rounded-full bg-white/[0.06] text-gray-500">
+                          +{project.technologies.length - 5}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Arrow */}
+                  <div className="hidden md:flex items-center">
+                    <ExternalLink
+                      size={18}
+                      className="text-gray-600 group-hover:text-[#FFD166] transition-colors duration-200"
+                    />
+                  </div>
                 </div>
-                <CardHeader>
-                  <CardTitle className="text-xl text-white flex items-center gap-2">
-                    {project.title}
-                    {project.featured && (
-                      <span className="inline-block w-2 h-2 rounded-full bg-[var(--accent-color,#FFD166)] animate-pulse" />
-                    )}
-                  </CardTitle>
-                  <CardDescription className="text-sm text-gray-300">
-                    {project.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-1 mb-4">
-                    {project.technologies.slice(0, 3).map((tech) => (
-                      <Badge
-                        key={tech}
-                        variant="outline"
-                        className="text-xs border-[var(--accent-color,#FFD166)] text-[var(--accent-color,#FFD166)] bg-transparent"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
-                    {project.technologies.length > 3 && (
-                      <Badge
-                        variant="outline"
-                        className="text-xs border-[var(--accent-color,#FFD166)] text-[var(--accent-color,#FFD166)] bg-transparent"
-                      >
-                        +{project.technologies.length - 3} more
-                      </Badge>
-                    )}
-                  </div>
-                  <div className="flex gap-2">
-                    {!project.is_private && (
-                      <Button
-                        asChild
-                        size="sm"
-                        className="flex-1 bg-[var(--accent-color,#FFD166)] text-[#23243a] font-bold hover:bg-[#ffe299]"
-                      >
-                        <Link href={project.liveUrl} target="_blank">
-                          <ExternalLink size={16} className="mr-1" />
-                          Live
-                        </Link>
-                      </Button>
-                    )}
-                    {!project.is_private && project.githubUrl && (
-                      <Button
-                        asChild
-                        variant="outline"
-                        size="sm"
-                        className="border-[var(--accent-color,#FFD166)] text-[var(--accent-color,#FFD166)]"
-                      >
-                        <Link href={project.githubUrl} target="_blank">
-                          <Github size={16} />
-                        </Link>
-                      </Button>
-                    )}
-                    {project.is_private && (
-                      <Badge
-                        variant="secondary"
-                        className="w-full text-center bg-gray-700/80 text-yellow-200"
-                      >
-                        Private Project
-                      </Badge>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
+              </Link>
             </motion.div>
           ))}
+        </div>
+
+        {/* Other Projects — Compact grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="mb-10"
+        >
+          <h3 className="text-lg font-medium text-gray-400 mb-8">
+            Other Projects
+          </h3>
         </motion.div>
 
-        {/* Divider */}
-        <div className="w-full h-0.5 bg-gradient-to-r from-transparent via-[var(--accent-color,#FFD166)]/40 to-transparent mb-16" />
-
-        {/* Other Projects */}
-        <motion.h3
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-2xl font-bold text-white mb-8 text-center"
-        >
-          Other Projects
-        </motion.h3>
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={{
             hidden: {},
-            visible: {
-              transition: { staggerChildren: 0.1 },
-            },
+            visible: { transition: { staggerChildren: 0.06 } },
           }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid md:grid-cols-2 gap-4"
         >
           {otherProjects.map((project) => (
             <motion.div
               key={project.id}
               variants={{
-                hidden: { opacity: 0, y: 40 },
+                hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 },
               }}
-              transition={{ type: "spring", stiffness: 80, damping: 18 }}
+              transition={{ duration: 0.35 }}
             >
-              <Card className="overflow-hidden group bg-[#23243a]/80 border-none shadow-md rounded-2xl transition-transform duration-300 hover:scale-[1.02] hover:shadow-xl relative">
-                <div className="relative h-32 overflow-hidden">
-                  <Image
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  {project.is_private && (
-                    <div className="absolute top-2 right-2 bg-gray-900/80 text-yellow-300 text-xs px-2 py-0.5 rounded-full font-semibold z-10">
-                      Private
+              {project.is_private ? (
+                <div className="flex items-start gap-4 p-5 rounded-xl bg-white/[0.02] border border-white/[0.05]">
+                  <div className="relative w-16 h-16 shrink-0 rounded-lg overflow-hidden bg-[#1a1b2e]">
+                    <Image
+                      src={project.image || "/file.svg"}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-1">
+                      <h4 className="text-sm font-medium text-white truncate">
+                        {project.title}
+                      </h4>
+                      <Lock size={12} className="text-gray-600 shrink-0" />
                     </div>
-                  )}
+                    <p className="text-xs text-gray-500 line-clamp-2">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-1 mt-2">
+                      {project.technologies.slice(0, 3).map((tech) => (
+                        <span
+                          key={tech}
+                          className="text-[10px] px-2 py-0.5 rounded-full bg-white/[0.04] text-gray-500"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                <CardHeader className="pb-2">
-                  <CardTitle className="text-lg text-white">
-                    {project.title}
-                  </CardTitle>
-                  <CardDescription className="text-xs text-gray-400 line-clamp-2">
-                    {project.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-1 mb-3">
-                    {project.technologies.slice(0, 2).map((tech) => (
-                      <Badge
-                        key={tech}
-                        variant="outline"
-                        className="text-xs border-[var(--accent-color,#FFD166)] text-[var(--accent-color,#FFD166)] bg-transparent"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
-                    {project.technologies.length > 2 && (
-                      <Badge
-                        variant="outline"
-                        className="text-xs border-[var(--accent-color,#FFD166)] text-[var(--accent-color,#FFD166)] bg-transparent"
-                      >
-                        +{project.technologies.length - 2}
-                      </Badge>
-                    )}
+              ) : (
+                <Link
+                  href={project.liveUrl}
+                  target="_blank"
+                  className="group flex items-start gap-4 p-5 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.05] hover:border-white/[0.08] transition-all duration-300"
+                >
+                  <div className="relative w-16 h-16 shrink-0 rounded-lg overflow-hidden bg-[#1a1b2e]">
+                    <Image
+                      src={project.image || "/file.svg"}
+                      alt={project.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
-                  <div className="flex gap-2">
-                    {!project.is_private && (
-                      <Button
-                        asChild
-                        size="sm"
-                        variant="outline"
-                        className="flex-1 text-xs border-[var(--accent-color,#FFD166)] text-[var(--accent-color,#FFD166)] hover:bg-[#FFD166]/10"
-                      >
-                        <Link href={project.liveUrl} target="_blank">
-                          <ExternalLink size={14} className="mr-1" />
-                          Live
-                        </Link>
-                      </Button>
-                    )}
-                    {!project.is_private && project.githubUrl && (
-                      <Button
-                        asChild
-                        variant="outline"
-                        size="sm"
-                        className="border-[var(--accent-color,#FFD166)] text-[var(--accent-color,#FFD166)]"
-                      >
-                        <Link href={project.githubUrl} target="_blank">
-                          <Github size={14} />
-                        </Link>
-                      </Button>
-                    )}
-                    {project.is_private && (
-                      <Badge
-                        variant="secondary"
-                        className="w-full text-center text-xs bg-gray-700/80 text-yellow-200"
-                      >
-                        Private Project
-                      </Badge>
-                    )}
+                  <div className="flex-1 min-w-0">
+                    <h4 className="text-sm font-medium text-white group-hover:text-[#FFD166] transition-colors duration-200 mb-1 truncate">
+                      {project.title}
+                    </h4>
+                    <p className="text-xs text-gray-500 line-clamp-2">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-1 mt-2">
+                      {project.technologies.slice(0, 3).map((tech) => (
+                        <span
+                          key={tech}
+                          className="text-[10px] px-2 py-0.5 rounded-full bg-white/[0.04] text-gray-400"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </CardContent>
-              </Card>
+                  <ExternalLink
+                    size={14}
+                    className="text-gray-600 group-hover:text-[#FFD166] transition-colors duration-200 shrink-0 mt-1"
+                  />
+                </Link>
+              )}
             </motion.div>
           ))}
         </motion.div>
