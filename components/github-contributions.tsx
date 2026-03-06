@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Select,
@@ -11,11 +11,7 @@ import {
 } from "@/components/ui/select";
 import { useQuery } from "@tanstack/react-query";
 import { useTRPC } from "@/trpc/client";
-import type {
-  ContributionData,
-  ContributionWeek,
-  ContributionDay,
-} from "@/trpc/routers/github";
+import type { ContributionWeek, ContributionDay } from "@/trpc/routers/github";
 import { Skeleton } from "@/components/ui/skeleton";
 import { motion } from "motion/react";
 
@@ -29,17 +25,6 @@ const years = Array.from({ length: 5 }, (_, i) => currentYear - i);
 function LoadingSkeleton() {
   return (
     <section className="w-full flex justify-center">
-      {/* <div className="w-full bg-[#23243a]/80 border-none shadow-xl rounded-2xl overflow-visible"> */}
-      {/* <CardHeader className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pb-6 pt-8 px-8"> */}
-      {/* <div>
-            <Skeleton className="h-8 w-48 mb-2 bg-gray-700" />
-            <Skeleton className="h-5 w-32 bg-gray-700" />
-          </div> */}
-      {/* <div className="flex flex-col items-end gap-1">
-            <Skeleton className="h-4 w-8 mb-1 bg-gray-700" />
-            <Skeleton className="h-10 w-[120px] bg-gray-700" />
-          </div> */}
-      {/* </CardHeader> */}
       <div className="px-0 pb-8 pt-0">
         <div className="flex flex-col gap-6">
           <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2 mb-2">

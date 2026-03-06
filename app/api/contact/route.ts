@@ -16,8 +16,8 @@ export async function POST(req: Request) {
     }
 
     const data = await resend.emails.send({
-      from: "Portfolio Contact <contact@notify.ditolab.com>",
-      to: ["support@ditolab.com"],
+      from: "Portfolio Contact <portfolio@notify.ditolab.com>",
+      to: ["business@ditolab.com"],
       subject: `New Contact Form Submission: ${subject}`,
       react: ContactFormEmail({
         firstName,
