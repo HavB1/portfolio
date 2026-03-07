@@ -19,6 +19,7 @@ import {
   Docker,
   PWA,
   Drizzle,
+  Convex,
 } from "@/lib/icons";
 
 const ACCENT = "#FFD166";
@@ -63,7 +64,7 @@ const SkillCard = ({ title, skills, icons }: SkillCardProps) => {
               )}
               <Badge
                 variant="outline"
-                className="text-sm py-2 px-3 border-[var(--accent-color,#FFD166)] text-[var(--accent-color,#FFD166)] bg-transparent group-hover:bg-[#FFD166]/10 transition-colors duration-300"
+                className="text-sm py-2 px-3 border-(--accent-color,#FFD166) text-(--accent-color,#FFD166) bg-transparent group-hover:bg-[#FFD166]/10 transition-colors duration-300"
               >
                 {skill}
               </Badge>
@@ -85,9 +86,17 @@ export default function Skills() {
     "Tanstack",
   ];
 
-  const backendSkills = ["PHP", "PostgreSQL", "Supabase", "Firebase"];
+  const backendSkills = ["PHP", "PostgreSQL", "Supabase", "Firebase", "Convex"];
 
-  const tools = ["Git", "Github", "Vercel", "Figma", "PWA", "Drizzle"];
+  const tools = [
+    "Git",
+    "Github",
+    "Vercel",
+    "Figma",
+    "PWA",
+    "Drizzle",
+    "Docker",
+  ];
 
   const icons = {
     React,
@@ -107,6 +116,7 @@ export default function Skills() {
     Docker,
     PWA,
     Drizzle,
+    Convex,
   };
 
   return (

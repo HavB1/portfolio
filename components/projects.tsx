@@ -31,7 +31,7 @@ const projects: Project[] = [
     id: 1,
     title: "Bipp Finance - Client App",
     description:
-      "Portfolio tracking, investment analysis, and real-time market data for Bipp Finance clients.",
+      "A platform that empowers individuals and businesses worldwide with reliable financial solutions, making global transactions simpler and safer.",
     image: "/bipp-client-web.jpg",
     technologies: [
       "Next.js",
@@ -52,13 +52,12 @@ const projects: Project[] = [
       "Personal finance app for tracking expenses, managing budgets, and gaining insights through detailed reports. Features multi-currency support and intelligent recommendations.",
     image: "/monetiq.png",
     technologies: [
-      "Next.js 15",
+      "Next.js 16",
       "React 19",
       "TypeScript",
       "Tailwind CSS",
+      "convex",
       "tRPC",
-      "PostgreSQL",
-      "Drizzle ORM",
       "Clerk",
       "Recharts",
     ],
@@ -71,7 +70,7 @@ const projects: Project[] = [
     title: "Doeit",
     description:
       "A personal workout companion app to track workouts, create custom training plans, and achieve fitness goals with progress tracking.",
-    image: "/file.svg",
+    image: "/doeit.png",
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     liveUrl: "https://doeit.ditolab.com",
     featured: true,
@@ -82,7 +81,7 @@ const projects: Project[] = [
     title: "Squish",
     description:
       "Client-side image compressor for JPEG, PNG & WebP. Drag-and-drop, adjustable quality, Google Drive import — everything runs in-browser, 100% private.",
-    image: "/file.svg",
+    image: "/squish.png",
     technologies: [
       "React 19",
       "TypeScript",
@@ -100,9 +99,9 @@ const projects: Project[] = [
     title: "LitQuiz - Student Notes",
     description:
       "AI-powered SaaS that generates interactive quizzes and flashcards from uploaded study materials like PDFs and images. Subscription-based with Row-Level Security.",
-    image: "/file.svg",
+    image: "/litquiz-note.png",
     technologies: [
-      "Next.js 15",
+      "Next.js 16",
       "TypeScript",
       "Clerk",
       "Neon PostgreSQL",
