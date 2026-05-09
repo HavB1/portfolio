@@ -23,6 +23,7 @@ import {
   Claude,
   Cursor,
   Copilot,
+  Codex,
 } from "@/lib/icons";
 
 const ACCENT = "#FFD166";
@@ -101,7 +102,7 @@ export default function Skills() {
     "Docker",
   ];
 
-  const agenticCoding = ["Claude Code", "Cursor", "Copilot"];
+  const agenticCoding = ["Claude Code", "Codex", "Cursor", "Copilot"];
 
   const icons = {
     React,
@@ -125,6 +126,7 @@ export default function Skills() {
     "Claude Code": Claude,
     Cursor,
     Copilot,
+    Codex,
   };
 
   return (
