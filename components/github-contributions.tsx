@@ -27,7 +27,7 @@ function LoadingSkeleton() {
       <div className="px-0 pb-8 pt-0">
         <div className="flex flex-col gap-6">
           <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2 mb-2">
-            <Skeleton className="h-4 w-[22ch] bg-[var(--accent-color,#FFD166)]/60" />
+            <Skeleton className="h-4 w-[22ch] bg-(--accent-color,#FFD166)/60" />
             <div className="flex items-center gap-2">
               <Skeleton className="h-4 w-8 bg-gray-700" />
               <div className="flex gap-1">
@@ -35,9 +35,7 @@ function LoadingSkeleton() {
                   <Skeleton
                     key={i}
                     className={`w-3 h-3 rounded ${
-                      i === 4
-                        ? "bg-[var(--accent-color,#FFD166)]"
-                        : "bg-gray-700"
+                      i === 4 ? "bg-(--accent-color,#FFD166)" : "bg-gray-700"
                     }`}
                   />
                 ))}
