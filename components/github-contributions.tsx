@@ -1,4 +1,4 @@
-he"use client";
+"use client";
 
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -96,8 +96,8 @@ export default function GitHubContributions() {
       },
       {
         enabled: !!selectedYear,
-      }
-    )
+      },
+    ),
   );
 
   const getColorClass = (count: number) => {
@@ -246,7 +246,7 @@ export default function GitHubContributions() {
                                 <div
                                   key={dayIndex}
                                   className={`w-4 h-4 rounded-[3.5px] shadow-sm transition-all duration-200 cursor-pointer ${getColorClass(
-                                    day.contributionCount
+                                    day.contributionCount,
                                   )}`}
                                   onMouseEnter={(e) => {
                                     const rect = (
@@ -264,10 +264,10 @@ export default function GitHubContributions() {
                                   }}
                                   onMouseLeave={() => setTooltip(null)}
                                 />
-                              )
+                              ),
                             )}
                           </div>
-                        )
+                        ),
                       )}
                     </div>
                     {tooltip && (
