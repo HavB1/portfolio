@@ -203,7 +203,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="py-28 px-4 bg-gradient-to-b from-[#23243a] via-[#2a2c42] to-[#23243a]"
+      className="py-28 px-4 bg-linear-to-b from-[#23243a] via-[#2a2c42] to-[#23243a]"
     >
       <div className="max-w-5xl mx-auto">
         {/* Section Header */}
@@ -218,7 +218,7 @@ export default function Projects() {
             Portfolio
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
-            Selected Work
+            A Gist of My Work
           </h2>
         </motion.div>
 

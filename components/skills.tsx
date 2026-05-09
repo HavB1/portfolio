@@ -9,6 +9,7 @@ import {
   Tailwind,
   Tanstack,
   Php,
+  Nodejs,
   PostgreSQL,
   Git,
   Github,
@@ -90,7 +91,14 @@ export default function Skills() {
     "Tanstack",
   ];
 
-  const backendSkills = ["PHP", "PostgreSQL", "Supabase", "Firebase", "Convex"];
+  const backendSkills = [
+    "Node.js",
+    "PHP",
+    "PostgreSQL",
+    "Supabase",
+    "Firebase",
+    "Convex",
+  ];
 
   const tools = [
     "Git",
@@ -112,6 +120,7 @@ export default function Skills() {
     Tailwind,
     Tanstack,
     PHP: Php,
+    "Node.js": Nodejs,
     PostgreSQL,
     Git,
     Github,
@@ -153,7 +162,7 @@ export default function Skills() {
           Skills & Technologies
         </motion.h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           <SkillCard title="Frontend" skills={frontendSkills} icons={icons} />
           <SkillCard title="Backend" skills={backendSkills} icons={icons} />
           <SkillCard title="Tools" skills={tools} icons={icons} />

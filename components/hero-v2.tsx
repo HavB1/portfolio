@@ -92,7 +92,7 @@ export default function HeroV2() {
         <div className="mt-4 h-10 md:h-14 flex items-center justify-center">
           <span
             key={roleIndex}
-            className="text-2xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-orange-400 animate-fade-in"
+            className="text-2xl md:text-5xl font-bold  bg-clip-text text-orange-400 animate-fade-in"
           >
             {roles[roleIndex]}
           </span>
