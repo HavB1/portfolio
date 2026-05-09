@@ -20,6 +20,9 @@ import {
   PWA,
   Drizzle,
   Convex,
+  Claude,
+  Cursor,
+  Copilot,
 } from "@/lib/icons";
 
 const ACCENT = "#FFD166";
@@ -98,6 +101,8 @@ export default function Skills() {
     "Docker",
   ];
 
+  const agenticCoding = ["Claude Code", "Cursor", "Copilot"];
+
   const icons = {
     React,
     "Next.js": Nextjs,
@@ -117,6 +122,9 @@ export default function Skills() {
     PWA,
     Drizzle,
     Convex,
+    "Claude Code": Claude,
+    Cursor,
+    Copilot,
   };
 
   return (
@@ -143,10 +151,15 @@ export default function Skills() {
           Skills & Technologies
         </motion.h2>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <SkillCard title="Frontend" skills={frontendSkills} icons={icons} />
           <SkillCard title="Backend" skills={backendSkills} icons={icons} />
           <SkillCard title="Tools" skills={tools} icons={icons} />
+          <SkillCard
+            title="Agentic Coding"
+            skills={agenticCoding}
+            icons={icons}
+          />
         </div>
       </div>
     </section>

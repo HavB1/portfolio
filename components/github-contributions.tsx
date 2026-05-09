@@ -15,7 +15,6 @@ import type { ContributionWeek, ContributionDay } from "@/trpc/routers/github";
 import { Skeleton } from "@/components/ui/skeleton";
 import { motion } from "motion/react";
 
-const ACCENT = "#FFD166";
 const BG_GRADIENT =
   "bg-gradient-to-br from-[#23243a] via-[#36394F] to-[#23243a]";
 
@@ -109,7 +108,7 @@ export default function GitHubContributions() {
     return "bg-[var(--accent-color,#FFD166)] border border-yellow-400/90";
   };
 
-  const months = [
+  const monthLabels = [
     "Jan",
     "Feb",
     "Mar",
@@ -123,10 +122,6 @@ export default function GitHubContributions() {
     "Nov",
     "Dec",
   ];
-  const monthLabels = Array.from({ length: 12 }, (_, i) => {
-    const monthIndex = (i + 1) % 12;
-    return months[monthIndex];
-  });
 
   return (
     <section
@@ -231,9 +226,15 @@ export default function GitHubContributions() {
                         </span>
                       ))}
                     </div>
-                    <div className="absolute left-0 top-0 bottom-0 flex flex-col justify-between text-xs text-gray-400 font-medium select-none pointer-events-none h-[110px] py-1">
-                      {["Mon", "Wed", "Fri"].map((day) => (
-                        <span key={day}>{day}</span>
+                    <div className="absolute left-0 top-2 text-xs text-gray-400 font-medium select-none pointer-events-none">
+                      {["Mon", "Wed", "Fri"].map((day, i) => (
+                        <span
+                          key={day}
+                          className="absolute leading-4"
+                          style={{ top: `${(2 * i + 1) * 20}px` }}
+                        >
+                          {day}
+                        </span>
                       ))}
                     </div>
                     <div className="grid grid-cols-53 gap-1 pl-8 pt-2 pb-2 min-w-5xl">
