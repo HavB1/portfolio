@@ -167,7 +167,7 @@ export default function GitHubContributions() {
                   Contributions
                 </CardTitle>
                 <div className="text-gray-400 text-base font-normal">
-                  Select a year to view your GitHub activity.
+                  Select a year to view my GitHub activity.
                 </div>
               </div>
               <div className="flex items-center gap-2">
