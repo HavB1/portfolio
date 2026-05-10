@@ -25,6 +25,12 @@ import {
   Cursor,
   Copilot,
   Codex,
+  ElevenLabs,
+  V0,
+  OpenClaw,
+  Lovable,
+  Remotion,
+  N8n,
 } from "@/lib/icons";
 
 const ACCENT = "#FFD166";
@@ -108,9 +114,14 @@ export default function Skills() {
     "PWA",
     "Drizzle",
     "Docker",
+    "Remotion",
   ];
 
   const agenticCoding = ["Claude Code", "Codex", "Cursor", "Copilot"];
+
+  const aiTools = ["ElevenLabs", "v0", "OpenClaw", "Lovable"];
+
+  const automation = ["n8n"];
 
   const icons = {
     React,
@@ -136,6 +147,12 @@ export default function Skills() {
     Cursor,
     Copilot,
     Codex,
+    ElevenLabs,
+    v0: V0,
+    OpenClaw,
+    Lovable,
+    Remotion,
+    n8n: N8n,
   };
 
   return (
@@ -169,6 +186,16 @@ export default function Skills() {
           <SkillCard
             title="Agentic Coding"
             skills={agenticCoding}
+            icons={icons}
+          />
+          <SkillCard
+            title="AI & LLM Tools"
+            skills={aiTools}
+            icons={icons}
+          />
+          <SkillCard
+            title="Automation"
+            skills={automation}
             icons={icons}
           />
         </div>
