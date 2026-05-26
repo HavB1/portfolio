@@ -28,6 +28,26 @@ type Project = {
 
 const projects: Project[] = [
   {
+    id: 11,
+    title: "Questions Pour les Surdoués",
+    description:
+      "End-to-end digital ecosystem powering QPS, Haiti's flagship national intercollegiate culture competition by MhatriX NG (since 2018). Four tightly integrated apps — institutional site, public platform with ticketing & inscriptions, school portal, and admin dashboard — sharing a unified backend, design system, and event orchestration layer.",
+    image: "/qps.jpg",
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "tRPC",
+      "Inngest",
+      "Resend",
+    ],
+    liveUrl: "https://qps.mhatrix.com",
+    featured: true,
+    is_private: true,
+  },
+  {
     id: 1,
     title: "Bipp Finance - Client App",
     description:
