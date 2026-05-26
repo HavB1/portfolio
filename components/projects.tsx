@@ -28,6 +28,26 @@ type Project = {
 
 const projects: Project[] = [
   {
+    id: 11,
+    title: "Questions Pour les Surdoués",
+    description:
+      "Platform for the 7th edition of QPS, a national intercollegiate general culture competition organized by Mhatrix NG. Handles inscriptions, showroom, donations, and sponsoring.",
+    image: "/qps.jpg",
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "tRPC",
+      "Inngest",
+      "Resend",
+    ],
+    liveUrl: "https://qps.mhatrix.com",
+    featured: true,
+    is_private: true,
+  },
+  {
     id: 1,
     title: "Bipp Finance - Client App",
     description:
