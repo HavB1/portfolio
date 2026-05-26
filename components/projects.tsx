@@ -31,7 +31,7 @@ const projects: Project[] = [
     id: 11,
     title: "Questions Pour les Surdoués",
     description:
-      "Monorepo powering QPS, Haiti's annual national intercollegiate general culture competition by MhatriX NG (since 2018). Bundles the MhatriX site, public ticketing & inscriptions, school portal, admin dashboard, and marketing recruitment portal.",
+      "End-to-end digital ecosystem powering QPS, Haiti's flagship national intercollegiate culture competition by MhatriX NG (since 2018). Four tightly integrated apps — institutional site, public platform with ticketing & inscriptions, school portal, and admin dashboard — sharing a unified backend, design system, and event orchestration layer.",
     image: "/qps.jpg",
     technologies: [
       "Next.js",
