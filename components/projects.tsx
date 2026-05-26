@@ -31,7 +31,7 @@ const projects: Project[] = [
     id: 11,
     title: "Questions Pour les Surdoués",
     description:
-      "Platform for the 7th edition of QPS, a national intercollegiate general culture competition organized by Mhatrix NG. Handles inscriptions, showroom, donations, and sponsoring.",
+      "Monorepo powering QPS, Haiti's annual national intercollegiate general culture competition by MhatriX NG (since 2018). Bundles the MhatriX site, public ticketing & inscriptions, school portal, admin dashboard, and marketing recruitment portal.",
     image: "/qps.jpg",
     technologies: [
       "Next.js",
