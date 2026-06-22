@@ -28,6 +28,25 @@ type Project = {
 
 const projects: Project[] = [
   {
+    id: 12,
+    title: "dispo",
+    description:
+      "Find a time that works for everyone — a faster, friendlier alternative to whenisgood/when2meet. Create an availability poll, share a link, and watch the group's availability roll in live. No sign-up required to respond.",
+    image: "/dispo.jpg",
+    technologies: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS v4",
+      "Supabase",
+      "Luxon",
+      "Zod",
+    ],
+    liveUrl: "https://dispo.ditolab.com",
+    featured: true,
+    is_private: false,
+  },
+  {
     id: 11,
     title: "Questions Pour les Surdoués",
     description:
