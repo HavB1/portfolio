@@ -1,5 +1,16 @@
+@layer ui-sdk;
 @import "tailwindcss";
+@import "@ui-sdk/core/web.css" layer(components);
 @import "tw-animate-css";
+
+/* web.css underlines every <a>; the existing site styles its links itself.
+   Not a copy of preflight's `a` rule: the dev build drops identical rules across layers. */
+@layer components {
+  a {
+    color: inherit;
+    text-decoration-line: inherit;
+  }
+}
 
 @custom-variant dark (&:is(.dark *));
 
@@ -117,7 +128,9 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    background: #0b0c0d;
+    color: #ecedee;
+    font-family: var(--font-geist-sans), system-ui, sans-serif;
   }
 }
 

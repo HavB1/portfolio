@@ -1,43 +1,41 @@
 import type React from "react";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { TRPCReactProvider } from "@/trpc/client";
-import { Toaster } from "sonner";
 
-const inter = Inter({ subsets: ["latin"] });
+const geist = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+});
+
+const description =
+  "Dito, fullstack engineer in Montréal. Web apps, SaaS and AI tools, from idea to production.";
 
 export const metadata: Metadata = {
-  title: "Ditolab - Fullstack Web Developer",
-  description:
-    "Experienced fullstack web developer specializing in React, Next.js, PHP, and PostgreSQL. Creating modern, responsive web applications.",
+  metadataBase: new URL("https://portfolio.ditolab.com"),
+  title: "ditolab · Fullstack engineer",
+  description,
   keywords:
-    "fullstack developer, web developer, React, Next.js, PHP, PostgreSQL, frontend, backend",
+    "fullstack engineer, web developer, Next.js, React, SaaS, AI tools, Montréal",
   authors: [{ name: "Ditolab" }],
   openGraph: {
-    title: "Ditolab - Fullstack Web Developer",
-    description:
-      "Experienced fullstack web developer specializing in React, Next.js, PHP, and PostgreSQL.",
+    title: "ditolab · Fullstack engineer",
+    description,
     type: "website",
     url: "https://portfolio.ditolab.com",
-    images: [
-      {
-        url: "https://portfolio.ditolab.com/opengraph-image.png",
-        width: 800,
-        height: 600,
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ditolab - Portfolio",
-    description:
-      "Experienced fullstack web developer specializing in React, Next.js, PHP, and PostgreSQL.",
-    images: {
-      url: "https://portfolio.ditolab.com/twitter-image.png",
-      alt: "Ditolab - Portfolio",
-    },
+    title: "ditolab · Fullstack engineer",
+    description,
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0b0c0d",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
@@ -47,13 +45,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={inter.className}>
-        <TRPCReactProvider>
-          <main className="min-h-screen bg-slate-950">
-            {children}
-            <Toaster richColors />
-          </main>
-        </TRPCReactProvider>
+      <body className={`${geist.variable} ${geistMono.variable}`}>
+        <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
     </html>
   );
