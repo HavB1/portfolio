@@ -1,16 +1,10 @@
 import Image from "next/image";
-import {
-  Progress,
-  ProgressIndicator,
-  ProgressLabel,
-  ProgressTrack,
-  ProgressValue,
-} from "@ui-sdk/react/progress";
 import { CommandPalette } from "@/components/site/command-palette";
 import { ContactDialog } from "@/components/site/contact-dialog";
-import { email, links, nowBuilding, projects } from "@/components/site/content";
+import { email, links, projects } from "@/components/site/content";
 import { GitHubStat } from "@/components/site/github-stat";
 import { MontrealClock } from "@/components/site/montreal-clock";
+import { NowBuilding } from "@/components/site/now-building";
 import "@/components/site/site.css";
 
 export default function Home() {
@@ -59,17 +53,7 @@ export default function Home() {
             </div>
 
             <div className="dl-tile dl-now">
-              <p className="dl-label">Now building</p>
-              <p className="dl-what">{nowBuilding.title}</p>
-              <Progress value={nowBuilding.progress} className="dl-progress">
-                <div className="dl-progress-meta">
-                  <ProgressLabel>{nowBuilding.label}</ProgressLabel>
-                  <ProgressValue />
-                </div>
-                <ProgressTrack>
-                  <ProgressIndicator />
-                </ProgressTrack>
-              </Progress>
+              <NowBuilding />
             </div>
           </section>
 

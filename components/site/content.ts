@@ -101,9 +101,8 @@ export const projects: Project[] = [
 ];
 
 export const nowBuilding = {
-  title: "LitQuiz v2: spaced repetition and shared decks",
-  label: "Sprint 4",
-  progress: 68,
+  title: "Questions Pour les Surdoués",
+  url: "https://qps.mhatrix.com",
 };
 
 export const email = "business@ditolab.com";
