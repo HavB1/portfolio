@@ -5,6 +5,7 @@ export type Project = {
   image: string;
   url?: string;
   client?: string;
+  private?: boolean;
 };
 
 export const projects: Project[] = [
@@ -34,7 +35,6 @@ export const projects: Project[] = [
     title: "LitQuiz",
     blurb: "Turns study notes into quizzes and flashcards with AI.",
     image: "/litquiz-note.png",
-    url: "https://note.litquiz.pro",
   },
   {
     id: "doeit",
@@ -66,13 +66,13 @@ export const projects: Project[] = [
     blurb: "Client portfolios, financial reports and real-time analytics.",
     image: "/bipp-admin-1.png",
     client: "Bipp Finance",
+    private: true,
   },
   {
     id: "bipp-simulator",
     title: "Bipp Finance · Simulator",
     blurb: "Investment projections for informed decisions.",
     image: "/bipp-calc.png",
-    url: "https://simulator.bippfinance.com",
     client: "Bipp Finance",
   },
   {
@@ -88,7 +88,6 @@ export const projects: Project[] = [
     title: "E4S · Tickets",
     blurb: "Generates event ticket designs from your own images.",
     image: "/e4s-ticket-making.png",
-    url: "https://tickets.e4shaiti.com",
     client: "Entreprises 4 Saisons",
   },
   {
@@ -97,6 +96,7 @@ export const projects: Project[] = [
     blurb: "Service operations and business analytics.",
     image: "/e4s-admin.png",
     client: "Entreprises 4 Saisons",
+    private: true,
   },
 ];
 

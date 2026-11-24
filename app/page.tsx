@@ -90,7 +90,7 @@ export default function Home() {
                     <div className="dl-card-body">
                       <p className="dl-card-meta">
                         {p.client ? `Client · ${p.client}` : "Product"}
-                        {!p.url && " · Private"}
+                        {p.private && " · Private"}
                       </p>
                       <h3>{p.title}</h3>
                       <p>{p.blurb}</p>
