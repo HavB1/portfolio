@@ -21,6 +21,8 @@ import {
 } from "@ui-sdk/react/dialog";
 import { email, projects } from "./content";
 
+const linked = projects.filter((p) => p.url);
+
 export function CommandPalette() {
   const [open, setOpen] = useState(false);
 
@@ -41,8 +43,8 @@ export function CommandPalette() {
               void navigator.clipboard?.writeText(email);
               return;
             }
-            const project = projects.find((p) => p.id === value);
-            if (project) {
+            const project = linked.find((p) => p.id === value);
+            if (project?.url) {
               window.open(project.url, "_blank", "noopener");
               return;
             }
@@ -60,7 +62,7 @@ export function CommandPalette() {
           <CommandList className="dl-palette-list">
             <CommandGroup>
               <CommandGroupLabel>Projects</CommandGroupLabel>
-              {projects.map((p) => (
+              {linked.map((p) => (
                 <CommandItem key={p.id} value={p.id} keywords={[p.title]}>
                   <span>{p.title}</span>
                   <ArrowUpRight aria-hidden="true" size={14} />

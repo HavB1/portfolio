@@ -143,3 +143,8 @@
 
 .dl-form-error { color: var(--ui-destructive); font-size: 14px; }
 .dl-spark[data-loading] i { opacity: 0.25; }
+.dl-card-body .dl-card-meta { font-family: var(--ui-font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+div.dl-card:hover { border-color: var(--ui-border); translate: none; }
+div.dl-card:hover .dl-shot img { scale: none; }
+.dl-grid > li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.dl-grid > li:last-child:nth-child(odd) .dl-shot { aspect-ratio: 32 / 10; }

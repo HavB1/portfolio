@@ -76,9 +76,9 @@ export default function Home() {
           <section id="work" aria-labelledby="work-h">
             <h2 id="work-h" className="dl-h2">Selected work</h2>
             <ul className="dl-grid">
-              {projects.map((p) => (
-                <li key={p.id}>
-                  <a href={p.url} target="_blank" rel="noreferrer" className="dl-card">
+              {projects.map((p) => {
+                const body = (
+                  <>
                     <div className="dl-shot">
                       <Image
                         src={p.image}
@@ -88,12 +88,27 @@ export default function Home() {
                       />
                     </div>
                     <div className="dl-card-body">
+                      <p className="dl-card-meta">
+                        {p.client ? `Client · ${p.client}` : "Product"}
+                        {!p.url && " · Private"}
+                      </p>
                       <h3>{p.title}</h3>
                       <p>{p.blurb}</p>
                     </div>
-                  </a>
-                </li>
-              ))}
+                  </>
+                );
+                return (
+                  <li key={p.id}>
+                    {p.url ? (
+                      <a href={p.url} target="_blank" rel="noreferrer" className="dl-card">
+                        {body}
+                      </a>
+                    ) : (
+                      <div className="dl-card">{body}</div>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </section>
 
